@@ -50,7 +50,7 @@ class Logger(logging.Logger):
                 maxBytes=10 * 1024 * 1024,
                 backupCount=1,
                 mode='a',
-                encoding=None,
+                encoding="utf8",
                 delay=0
             )
             handler.setFormatter(log_format)

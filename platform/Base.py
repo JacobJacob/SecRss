@@ -88,13 +88,14 @@ class Base(object):
                 if url not in self.picBlacklist:
                     ir = requests.get(url)
                     if ir.status_code == 200:
-                        logger.info("获取到图片{picUlr}".format(picUlr=url))
+                        logger.info("Get into the {picUlr}".format(picUlr=url))
                         filename = str(uuid.uuid1()) + "." + suffix
 
                         open(BASE_PATH + 'static/' + filename, 'wb').write(ir.content)
 
-                        logger.info("下载图片{picName},本地图片名字{localPicName}"
+                        logger.info("Download Pic for {picName},save to local pic name is {localPicName}"
                                     .format(picName=url, localPicName=filename))
+
                         content.replace(url, self.static_domain + filename)
             except Exception as e:
                 logger.warn("下载图片异常:" + str(e))
@@ -120,16 +121,16 @@ class Base(object):
         try:
             if self.push_message():
                 logger.info("消息推送成功！")
-                if self.info['save']:
-                    today = published = time.strftime("%Y-%m-%d")
-                    for item in self.news_list:
-                        for target in item['target']:
-                            self.save_post_to_mysql(target['title'], target['link'], item['source']['s_title'],
-                                                    published,
-                                                    item['source']['start_str'], item['source']['end_str'],
-                                                    item['source']['lazyLoading'], item['source']['lazyLabel'])
-                            self.count += 1
-                    self.save_count_to_mysql(today, self.count)
-                    logger.info("保存日期 %s 的文章成功！")
+            if self.info['save']:
+                today = published = time.strftime("%Y-%m-%d")
+                for item in self.news_list:
+                    for target in item['target']:
+                        self.save_post_to_mysql(target['title'], target['link'], item['source']['s_title'],
+                                                published,
+                                                item['source']['start_str'], item['source']['end_str'],
+                                                item['source']['lazyLoading'], item['source']['lazyLabel'])
+                        self.count += 1
+                self.save_count_to_mysql(today, self.count)
+                logger.info("保存日期 %s 的文章成功！")
         except Exception as e:
             logger.warn("推送平台异常，异常信息为:" + str(e))
