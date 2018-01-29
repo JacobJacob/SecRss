@@ -1,7 +1,7 @@
-#RssBackup
+#SecRss
 ![miao](http://mweb.03sec.com/2018-01-29-timg.jpeg)
 
-## 什么是RssBackup？
+## 什么是SecRss？
 - 将rss源每天更新的文章保存到本地
 - 将rss源每天更新的文章通过平台推送给用户
 - ……
@@ -14,7 +14,7 @@
 1. 下载代码
 
 ```
-git clone https://github.com/anbai-inc/RssBackup.git
+git clone https://github.com/anbai-inc/SecRss.git
 ```
 
 2. 安装依赖环境
