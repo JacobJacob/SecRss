@@ -1,0 +1,8 @@
+feedparser==5.2.1
+python-dateutil==2.6.1
+requests==2.16.0
+pymysql==0.7.11
+bs4==0.0.1
+beautifulsoup4==4.6.0
+configparser==3.5.0
+lxml==4.1.1
