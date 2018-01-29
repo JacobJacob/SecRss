@@ -79,24 +79,19 @@ class Platform(Base):
 }
 ```
 ### 各个字段说明
-#### name
-名字
-#### s_title
-入库时候保存的名字
-#### rss
-rss订阅地址
-#### has_content
-采集的内容是否包含xxx，如果为空，则直接进行采集
-#### start_str
-采集文章开始的位置，html标签去表示
-#### end_str
-采集文章结束的位置，html标签去表示
-#### language
-网站语言类型
-#### lazyLoading
-图片是否为懒加载
-#### lazyLabel
-图片懒加载标签里面真实的图片地址
+
+| 字段名 | 描述 |
+| --- | --- |
+| name | 名字 |
+| s_title | 入库时候保存的名字 |
+| rss | rss订阅地址 |
+| has_content | 采集的内容是否包含xxx，如果为空，则直接进行采集 |
+| start_str | 采集文章开始的位置，html标签去表示 |
+| end_str | 采集文章结束的位置，html标签去表示 |
+| language | 网站语言类型 |
+| lazyLoading | 图片是否为懒加载 |
+| lazyLabel | 图片懒加载标签里面真实的图片地址 |
+
 
 ## 定是采集设置（适用于linux）
 1. 在/var/目录下新建一个`run.sh`，输入以下代码，记住更改代码的绝对路径
@@ -110,4 +105,6 @@ rss订阅地址
 29 18 * * * /var/run.sh
 ```
 该规则的意思为每天18点29分运行`var`目录下面的`run.sh`(我们上面保存run.sh的路径)
+
+
 
