@@ -106,5 +106,11 @@ class Platform(Base):
 ```
 该规则的意思为每天18点29分运行`var`目录下面的`run.sh`(我们上面保存run.sh的路径)
 
+## 内置推送平台一览
 
+> 所有插件都在目录`platform`下，如果你有新的平台插件愿意共享，欢迎向本项目提交push.
+
+| 支持平台 | 模块名字 | 注意事项 | 预览 |
+| --- | --- | --- | --- |
+| 钉钉 | dingding.py | 需要使用者自己修改dingding.py里面的webhook地址，钉钉webhook申请流程：[点此查看](https://open-doc.dingtalk.com/docs/doc.htm?spm=a219a.7629140.0.0.EiKypY&treeId=257&articleId=105735&docType=1) | ![dingding](http://mweb.03sec.com/2018-01-29-15172071615268.jpg) |
 
