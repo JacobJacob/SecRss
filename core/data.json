@@ -66,23 +66,12 @@
     "lazyLabel":"data-original"
   },
   {
-    "name": "360bobao-learning",
-    "s_title": "安全客-知识",
-    "rss": "http://bobao.360.cn/rss?type=learning",
+    "name": "anquanke",
+    "s_title": "安全客",
+    "rss": "https://api.anquanke.com/data/v1/rss",
     "has_content": "",
-    "start_str": "<div id=\"article_box\">",
-    "end_str": "<div style=\"margin-top: 20px;background-color:#FFFFFF\">",
-    "language": "zh-cn",
-    "lazyLoading":true,
-    "lazyLabel":"data-original"
-  },
-  {
-    "name": "360bobao-news",
-    "s_title": "安全客-资讯",
-    "rss": "http://bobao.360.cn/rss?type=news",
-    "has_content": "",
-    "start_str": "<div id=\"article_box\">",
-    "end_str": "<div style=\"margin-top: 20px;background-color:#FFFFFF\">",
+    "start_str": "<div style=\"box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 4px 0px; background-color: white; padding-bottom: 12px;\"><div>",
+    "end_str": "<section class=\"article-footer-label\">",
     "language": "zh-cn",
     "lazyLoading":true,
     "lazyLabel":"data-original"
