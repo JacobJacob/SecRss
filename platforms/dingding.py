@@ -5,7 +5,7 @@ import json
 import datetime
 import requests
 
-from platform.Base import Base
+from platforms.Base import Base
 from utils.logger import logger
 
 

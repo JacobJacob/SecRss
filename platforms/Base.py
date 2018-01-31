@@ -119,10 +119,10 @@ class Base(object):
         :return Boolean:
         """
         try:
+            today = published = time.strftime("%Y-%m-%d")
             if self.push_message():
-                logger.info("消息推送成功！")
+                logger.info("%s消息推送成功！" % str(today))
             if self.info['save']:
-                today = published = time.strftime("%Y-%m-%d")
                 for item in self.news_list:
                     for target in item['target']:
                         self.save_post_to_mysql(target['title'], target['link'], item['source']['s_title'],
@@ -131,6 +131,6 @@ class Base(object):
                                                 item['source']['lazyLoading'], item['source']['lazyLabel'])
                         self.count += 1
                 self.save_count_to_mysql(today, self.count)
-                logger.info("保存日期 %s 的文章成功！")
+                logger.info("保存日期 %s 的文章成功！今日采集文章总量为%s" % (str(today), len(self.news_list)))
         except Exception as e:
             logger.warn("推送平台异常，异常信息为:" + str(e))

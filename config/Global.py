@@ -28,10 +28,10 @@ def load_platform():
     载入信息发布平台
     :return:
     """
-    platform_dir = BASE_PATH + 'platform'
+    platform_dir = BASE_PATH + 'platforms'
 
     platform_base = PluginBase(
-        package=str('platform').replace('/', '.'), searchpath=[platform_dir]
+        package=str('platforms').replace('/', '.'), searchpath=[platform_dir]
     )
     platform_source = platform_base.make_plugin_source(
         searchpath=[platform_dir], persist=True
