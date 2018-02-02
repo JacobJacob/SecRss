@@ -123,13 +123,13 @@
   {
     "name": "xuanwu-lab",
     "s_title": "玄武实验室",
-    "rss": "https://api.prprpr.me/weibo/rss/5582522936",
-    "has_content": "今天的",
-    "start_str": "-1-1-",
-    "end_str": "-1-1-",
+    "rss": "https://raw.githubusercontent.com/XuanwuLab/XuanwuLab.github.io/master/cn/secnews/atom.xml",
+    "has_content": "",
+    "start_str": "<div id=\"weibowrapper\">",
+    "end_str": "<div id=\"datenavigate\">\n<hr>",
     "language": "zh-cn",
-    "lazyLoading":true,
-    "lazyLabel":"data-original"
+    "lazyLoading":false,
+    "lazyLabel":""
   },
   {
     "name": "evil0x",

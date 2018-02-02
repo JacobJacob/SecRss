@@ -6,6 +6,8 @@ import re
 import uuid
 import datetime
 import os
+from urllib.parse import urljoin
+
 import requests
 import time
 from bs4 import BeautifulSoup
@@ -61,7 +63,7 @@ class Base(object):
             if lazyLoading:
                 content = content.replace(lazyLabel, "src")
             if self.info['images']:
-                content = self.download_image(content)
+                content = self.download_image(content, source_url)
         except Exception as e:
             r = requests.get(source_url).text
             content = r[r.find(start_str):r.find(end_str)]
@@ -73,9 +75,10 @@ class Base(object):
             except Exception as e:
                 logger.warn("保存文章到数据库出错,错误信息" + str(e))
 
-    def download_image(self, content):
+    def download_image(self, content, source_url):
         """
         下载图片
+        :param source_url:
         :param content:
         :return:
         """
@@ -86,6 +89,8 @@ class Base(object):
             (url, suffix) = re.findall(r'(.+?\.(png|jpg|gif|jpeg))', tmpUrl)[0]
             try:
                 if url not in self.picBlacklist:
+                    if str(url).startswith("http") is False:
+                        url = urljoin(source_url, url)
                     ir = requests.get(url)
                     if ir.status_code == 200:
                         logger.info("Get into the {picUlr}".format(picUlr=url))
@@ -96,7 +101,7 @@ class Base(object):
                         logger.info("Download Pic for {picName},save to local pic name is {localPicName}"
                                     .format(picName=url, localPicName=filename))
 
-                        content.replace(url, self.static_domain + filename)
+                        content = content.replace(url, self.static_domain + filename)
             except Exception as e:
                 logger.warn("下载图片异常:" + str(e))
         return content
