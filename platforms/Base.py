@@ -101,7 +101,7 @@ class Base(object):
                         logger.info("Download Pic for {picName},save to local pic name is {localPicName}"
                                     .format(picName=url, localPicName=filename))
 
-                        content = content.replace(url, self.static_domain + filename)
+                        content = content.replace(tmpUrl, self.static_domain + filename)
             except Exception as e:
                 logger.warn("下载图片异常:" + str(e))
         return content
